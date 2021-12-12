@@ -5,11 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PM25</title>
+    <!-- css -->
+    <style>
+        body{
+            background-color: rgb(163, 219, 253);
+            text-align: center;
+        }
+        table{
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: separate;
+            border-spacing: 0px 3px;
+        }
+        thead{
+            background-color: navy;
+            color: lightyellow;
+        }
+        h2{
+            background-color: firebrick;
+            color: lightyellow;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>PM2.5 每日均值</h1>
+    <h2>PM2.5濃度最高:{{result_sort.0}} {{result_sort.1}}</h2>
     {{time}}
-    <table border="pm25">
+    <form action="" method="POST">
+        帳號
+        <input type="text">
+        密碼
+        <input type="password">
+        email
+        <input type="">
+        <input type="submit" name="update" value="更新">
+        <input type="submit" name="sort" value="排序">
+    </form>
+    <table id="pm25" border="1">
         <thead>
             <tr>
                 {% for column in columns %}
